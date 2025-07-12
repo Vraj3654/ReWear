@@ -14,21 +14,22 @@
       margin: 0;
     }
     .login-container {
-      width: 200%;
+      width: 100%;
       max-width: 400px;
       text-align: center;
-      align-items: center;
       padding: 5%;
-      align: center;
     }
     form input {
       display: block;
       width: 100%;
       margin: 10px auto;
+      padding: 10px;
+      box-sizing: border-box;
     }
-    .email{
-        background-color: #ffffff;
-        width: 50px;
+    .email, .password {
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -36,8 +37,8 @@
   <div class="login-container">
     <h2>Login to ReWear</h2>
     <form action="#">
-      <input class="email" type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
+      <input type="email" class="email" placeholder="Email" required />
+      <input type="password" class="password" placeholder="Password" required />
       <button type="submit">Login</button>
     </form>
     <p>Don't have an account? <a href="signup.html">Sign up here</a></p>

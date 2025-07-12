@@ -17,11 +17,30 @@
       width: 100%;
       max-width: 500px;
       text-align: center;
+      padding: 5%;
     }
     form input, form textarea {
       display: block;
       width: 100%;
       margin: 10px auto;
+      padding: 10px;
+      box-sizing: border-box;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
@@ -34,9 +53,8 @@
       <input type="text" placeholder="Type (Shirt, Dress, etc.)" required />
       <input type="text" placeholder="Size (S/M/L/XL)" required />
       <input type="text" placeholder="Condition (New, Good, Used)" required />
-      <textarea placeholder="Item Description" rows="4" style="border-radius: 6px; padding: 0.75rem;"></textarea>
-      <input type="file" accept="image/*" required />
-      <button type="submit">Submit Item</button>
+      <textarea placeholder="Description (Optional)" rows="4"></textarea>
+      <button type="submit">List Item</button>
     </form>
   </div>
 </body>
