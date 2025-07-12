@@ -1,34 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>List New Item - ReWear</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .signup-container {
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      padding: 5%;
+    }
+    form input, form textarea {
+      display: block;
+      width: 100%;
+      margin: 10px auto;
+      padding: 10px;
+      box-sizing: border-box;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="nav-container">
-      <h2>ReWear</h2>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="list-item.html">List Item</a>
-        <a href="admin.html">Admin Panel</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html">Sign Up</a>
-      </nav>
-    </div>
-  </header>
-  <main class="main">
-    <h1>List a New Item</h1>
-    <form class="form">
-      <input type="text" placeholder="Title" required>
-      <input type="text" placeholder="Category" required>
-      <input type="text" placeholder="Size" required>
-      <input type="text" placeholder="Condition" required>
-      <textarea placeholder="Description"></textarea>
-      <button type="submit">Submit</button>
+  <div class="signup-container">
+    <h2>List a New Clothing Item</h2>
+    <form action="#">
+      <input type="text" placeholder="Title (e.g., Blue Jacket)" required />
+      <input type="text" placeholder="Category (Men/Women/Kids)" required />
+      <input type="text" placeholder="Type (Shirt, Dress, etc.)" required />
+      <input type="text" placeholder="Size (S/M/L/XL)" required />
+      <input type="text" placeholder="Condition (New, Good, Used)" required />
+      <textarea placeholder="Description (Optional)" rows="4"></textarea>
+      <button type="submit">List Item</button>
     </form>
-  </main>
+  </div>
+</body>
+</html>
+
+<!-- index.html (homepage) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReWear - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    header {
+      display: flex;
+      align-items: center;
+      padding: 15px 30px;
+    }
+    .logo {
+      font-size: 24px;
+      color: #6fff9e;
+      font-weight: bold;
+      margin-right: auto;
+      padding-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">ReWear</div>
+    <!-- Other navigation links here -->
+  </header>
 </body>
 </html>
