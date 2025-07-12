@@ -1,18 +1,27 @@
 const express = require('express');
-const Item = require('../models/item');
 const router = express.Router();
+const { db } = require('../firebase-config');
 
-// Get all items
-router.get('/', async (req, res) => {
-  const items = await Item.find().populate('uploader', 'name');
-  res.json(items);
+// Add a new item
+router.post('/list-item', async (req, res) => {
+  try {
+    const item = req.body;
+    const docRef = await db.collection('items').add(item);
+    res.status(201).json({ id: docRef.id });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
-// Add new item
-router.post('/', async (req, res) => {
-  const newItem = new Item(req.body);
-  await newItem.save();
-  res.status(201).json({ msg: 'Item listed' });
+// Get items
+router.get('/items', async (req, res) => {
+  try {
+    const snapshot = await db.collection('items').get();
+    const items = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    res.status(200).json(items);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 module.exports = router;
