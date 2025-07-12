@@ -1,14 +1,14 @@
-require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const PORT = process.env.PORT || 4000;
+const bodyParser = require('body-parser');
+const authRoutes = require('./routes/auth');
+const itemRoutes = require('./routes/items');
 
 const app = express();
-app.use(cors());    
-app.use(express.json());
+app.use(cors());
+app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send('ReWear API with Firebase'));
+app.use('/api/auth', authRoutes);
+app.use('/api/items', itemRoutes);
 
-app.use('/api/auth', require('./routes/auth'));
-
-app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
+app.listen(3000, () => console.log('Server running on http://localhost:3000'));
