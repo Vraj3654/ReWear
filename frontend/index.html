@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReWear - Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="nav-container">
+      <h2>ReWear</h2>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="list-item.html">List Item</a>
+        <a href="admin.html">Admin</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main fade-in">
+    <h1 class="slide-in">Welcome to ReWear</h1>
+    <p class="slide-in">Swap clothes easily. Promote sustainability. Look good, feel good.</p>
+
+    <div class="categories slide-in">
+      <button>Men</button>
+      <button>Women</button>
+      <button>Kids</button>
+      <button>Accessories</button>
+    </div>
+
+    <div class="item-grid">
+      <div class="card bounce-in">
+        <h3>Denim Jacket</h3>
+        <p>Size: M | Condition: Good</p>
+        <button onclick="openModal('jacket')">Swap Request</button>
+      </div>
+      <div class="card bounce-in">
+        <h3>Floral Dress</h3>
+        <p>Size: S | Condition: Excellent</p>
+        <button onclick="openModal('dress')">Redeem via Points</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="popup" class="modal">
+    <div class="modal-content">
+      <h3>Action Confirmed</h3>
+      <p>Your request has been received!</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(item) {
+      document.getElementById('popup').classList.add('active');
+    }
+    function closeModal() {
+      document.getElementById('popup').classList.remove('active');
+    }
+  </script>
+</body>
+</html>
