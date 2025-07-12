@@ -8,21 +8,39 @@
 <body>
   <header class="header">
     <div class="nav-container">
-      <h2>ReWear</h2>
+      <h2 style="margin-right: 20px;">ReWear</h2>
       <nav>
         <a href="index.html">Home</a>
         <a href="dashboard.html">Dashboard</a>
         <a href="list-item.html">List Item</a>
-        <a href="admin.html">Admin Panel</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html">Sign Up</a>
+        <a href="admin.html">Admin</a>
       </nav>
     </div>
   </header>
-  <main class="main">
-    <h1>Your Dashboard</h1>
-    <p>Points: 150</p>
-    <p>Ongoing Swaps: 2 | Completed Swaps: 5</p>
+
+  <main class="main fade-in">
+    <section class="hero slide-in">
+      <h1>Welcome Back!</h1>
+      <p>Explore new items and manage your listings.</p>
+      <div class="cta-buttons">
+        <button onclick="location.href='list-item.html'">List New Item</button>
+        <button onclick="location.href='dashboard.html'">View Dashboard</button>
+      </div>
+    </section>
+
+    <section class="recent-listings">
+      <h2>Your Recent Listings</h2>
+      <div class="listing-items">
+        <div class="listing-item">
+          <img src="images/item1.jpg" alt="Item 1" />
+          <p>Blue Jacket - Size M</p>
+        </div>
+        <div class="listing-item">
+          <img src="images/item2.jpg" alt="Item 2" />
+          <p>Red Dress - Size L</p>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
