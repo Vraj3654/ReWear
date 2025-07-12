@@ -22,28 +22,63 @@
   </header>
 
   <main class="main fade-in">
-    <h1 class="slide-in">Welcome to ReWear</h1>
-    <p class="slide-in">Swap clothes easily. Promote sustainability. Look good, feel good.</p>
-
-    <div class="categories slide-in">
-      <button>Men</button>
-      <button>Women</button>
-      <button>Kids</button>
-      <button>Accessories</button>
-    </div>
-
-    <div class="item-grid">
-      <div class="card bounce-in">
-        <h3>Denim Jacket</h3>
-        <p>Size: M | Condition: Good</p>
-        <button onclick="openModal('jacket')">Swap Request</button>
+    <section class="hero slide-in">
+      <h1>Welcome to ReWear</h1>
+      <p>Swap clothes easily. Promote sustainability. Look good, feel good.</p>
+      <div class="cta-buttons">
+        <button onclick="location.href='list-item.html'">Start Swapping</button>
+        <button onclick="location.href='dashboard.html'">Browse Items</button>
       </div>
-      <div class="card bounce-in">
-        <h3>Floral Dress</h3>
-        <p>Size: S | Condition: Excellent</p>
-        <button onclick="openModal('dress')">Redeem via Points</button>
+      <div class="search-bar">
+        <input type="text" placeholder="Search clothes, categories..." />
+        <button>Search</button>
       </div>
-    </div>
+    </section>
+
+    <section class="carousel">
+      <h2>Featured Items</h2>
+      <div class="carousel-items">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" alt="Jacket" />
+        <img src="https://images.unsplash.com/photo-1520974722030-3300a5f99454" alt="Dress" />
+        <img src="https://images.unsplash.com/photo-1618354691419-5f248ba0d09a" alt="Shirt" />
+      </div>
+    </section>
+
+    <section class="categories slide-in">
+      <h2>Categories</h2>
+      <div class="category-grid">
+        <button>Men</button>
+        <button>Women</button>
+        <button>Kids</button>
+        <button>Winter Wear</button>
+        <button>Accessories</button>
+        <button>Casuals</button>
+      </div>
+    </section>
+
+    <section class="product-listings">
+      <h2>Recent Listings</h2>
+      <div class="item-grid">
+        <div class="card bounce-in">
+          <img src="https://images.unsplash.com/photo-1593032465171-d6dcb3a3f75c" alt="Denim Jacket" />
+          <h3>Denim Jacket</h3>
+          <p>Size: M | Condition: Good</p>
+          <button onclick="openModal('jacket')">Swap Request</button>
+        </div>
+        <div class="card bounce-in">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" alt="Floral Dress" />
+          <h3>Floral Dress</h3>
+          <p>Size: S | Condition: Excellent</p>
+          <button onclick="openModal('dress')">Redeem via Points</button>
+        </div>
+        <div class="card bounce-in">
+          <img src="https://images.unsplash.com/photo-1587049352849-f400dc0f09d6" alt="Casual Shirt" />
+          <h3>Casual Shirt</h3>
+          <p>Size: L | Condition: Good</p>
+          <button onclick="openModal('shirt')">Swap Request</button>
+        </div>
+      </div>
+    </section>
   </main>
 
   <div id="popup" class="modal">
