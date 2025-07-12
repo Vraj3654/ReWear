@@ -1,19 +1,31 @@
 /* style.css */
 
-body {
+:root {
+    --primary-bg: #171717;
+    --accent-purple: #b388eb;
+    --accent-green: #6fffb0;
+    --text-color: #ffffff;
+    --card-bg: #222;
+    --card-text: #ddd;
+  }
+  
+  body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f4f4;
+    background: var(--primary-bg);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    justify-content: center;
+    align-items: center;
   }
   
   .header {
-    background: #1a1a2e;
+    background: #0f0f0f;
     padding: 1rem 2rem;
-    color: white;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
   }
   
   .nav-container {
@@ -26,7 +38,7 @@ body {
   
   nav a {
     margin-left: 1rem;
-    color: #ffffff;
+    color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
@@ -35,128 +47,174 @@ body {
   }
   
   nav a:hover {
-    background-color: #16213e;
-    color: #fddb3a;
+    background-color: var(--accent-purple);
+    color: #000;
   }
   
   .main {
     flex: 1;
     padding: 2rem;
-    max-width: 800px;
+    max-width: 1200px;
     margin: auto;
+  }
+  
+  .hero h1 {
+    color: var(--accent-green);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
     text-align: center;
   }
   
-  h1, p {
-    color: #333;
-  }
-  
-  .card {
-    background: white;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  .hero p {
+    font-size: 1.2rem;
+    color: var(--card-text);
+    margin-bottom: 1rem;
     text-align: center;
-    transition: transform 0.3s ease;
   }
   
-  .card:hover {
-    transform: translateY(-5px);
+  .cta-buttons {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-buttons button {
+    background: var(--accent-purple);
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .cta-buttons button:hover {
+    background: var(--accent-green);
+  }
+  
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .search-bar input {
+    width: 300px;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px 0 0 6px;
+    font-size: 1rem;
+  }
+  
+  .search-bar button {
+    padding: 0.75rem 1rem;
+    background: var(--accent-green);
+    border: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .login-container, .signup-container {
+    max-width: 400px;
+    margin: auto;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-align: center;
+  }
+  
+  .login-container h2, .signup-container h2 {
+    margin-bottom: 1rem;
+    color: var(--accent-green);
+  }
+  
+  .login-container input, .signup-container input {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .login-container button, .signup-container button {
+    background: var(--accent-purple);
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  .carousel-items {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem 0;
+    justify-content: center;
+  }
+  
+  .carousel-items img {
+    height: 220px;
+    width: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 1rem;
+    flex-shrink: 0;
   }
   
   .item-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
-    margin-top: 2rem;
   }
   
-  button {
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    transition: background 0.3s ease;
-  }
-  
-  button:hover {
-    background: linear-gradient(135deg, #5a7bfa, #976bdc);
-  }
-  
-  .form input, .form textarea {
-    display: block;
+  .card img {
     width: 100%;
-    margin: 0.5rem 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-  }
-  
-  .form button {
-    margin-top: 1rem;
-  }
-  
-  /* Modal (for popup) */
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-  }
-  
-  .modal.active {
-    display: flex;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
   }
   
   .modal-content {
-    background: white;
+    background: var(--card-bg);
+    color: var(--text-color);
     padding: 2rem;
     border-radius: 10px;
-    max-width: 400px;
     text-align: center;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
   }
   
   .modal-content button {
+    background: var(--accent-purple);
+    color: #000;
     margin-top: 1rem;
-  }
-  
-  /* Center Everything on Page */
-  .center-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Apply to pages that need full center layout */
-  body.centered {
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Success or Alert Box */
-  .alert {
-    padding: 15px;
-    background-color: #4CAF50;
-    color: white;
-    margin-top: 20px;
+    padding: 0.5rem 1rem;
     border-radius: 6px;
-    display: none;
+    border: none;
+    cursor: pointer;
   }
   
-  .alert.show {
-    display: block;
+  input[type="file"] {
+    background: var(--card-bg);
+    padding: 0.5rem;
+    border-radius: 6px;
+    color: var(--text-color);
+    margin-top: 1rem;
+    width: 100%;
   }
-  
+
+  button {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: var(--hover-bg, #45a049); /* Default hover background color */
+    color: var(--hover-text-color, #fff); /* Default hover text color */
+    cursor: pointer;
+  }
